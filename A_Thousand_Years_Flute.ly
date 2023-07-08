@@ -3,6 +3,7 @@
   subtitle = "Music by David Hodges & Christina Perri"
   subsubtitle = "For flute"
   arranger = "Arranged by Igor Matveev"
+  % based on https://www.virtualsheetmusic.com/score/HL-362031.html
 }
 
 \score {
