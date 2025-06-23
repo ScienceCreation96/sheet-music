@@ -48,13 +48,21 @@ firstChorusMelody = \relative c'' {
   r2 g8\f b g d'~ | % What can I say
   d4 c8 b r4 f8 d'~ | \break % except "you're welcome
   d8 b4. r8 f g a~ | % For the tides, 
-  a4 a8 b~ b4 a8 g~ | % the sun, the sky
-  
+  a4 a8 b~ b4 a8 g~ | % the sun, the sky.
+  g4 r g8\f b g d'~ | % Hey, it's okay,
+  d d c b~ b4 f8 d'~ | % it's okay, you're welcome
+  d b4. r4 r8 f | % I'm 
+  a a a a a a \tuplet 3/2 {g b d~} | % just an ordinary demi-guy!
+  d4 r
+
 }
 
 firstChorusWords = \lyricmode {
   What can I say __ ex -- cept, "\"You're" wel -- "come\"?"
   For the tides, __ the sun, __ the sky. __
+  Hey, it's o -- kay, __ it's o -- kay, __ you're wel -- come.
+  I'm just an or -- di -- nar -- y dem -- i -- guy! __
+
 }
 
 \score {
