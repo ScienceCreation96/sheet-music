@@ -12,7 +12,6 @@ global = {
 }
 
 firstVerseMelody = \relative c' {
-  r1 |
   \mark \markup \box "Verse 1"
   f4\mf b,8 b b b b b( | % I see what's happening here:
   aes2) r4 r8 aes | \break % You're 
@@ -29,6 +28,7 @@ firstVerseMelody = \relative c' {
   g4 d8 f~ f4 d8 f~ | % lot: the hair, the bod,
   f4 r r b,8 b | \break % When you're
   aes' aes aes aes \tuplet 3/2 {aes g f~} f4| % staring at a demigod
+  r2
 }
 
 firstVerseLyrics = \lyricmode {
@@ -45,11 +45,11 @@ firstVerseLyrics = \lyricmode {
 
 firstChorusMelody = \relative c'' {
   \mark \markup \box "Chorus 1"
-  r2 g8\f b g d'~ | % What can I say
+  g8\f b g d'~ | % What can I say
   d4 c8 b r4 f8 d'~ | \break % except "you're welcome
   d8 b4. r8 f g a~ | % For the tides, 
   a4 a8 b~ b4 a8 g~ | % the sun, the sky.
-  g4 r g8\f b g d'~ | % Hey, it's okay,
+  g4 r g8 b g d'~ | % Hey, it's okay,
   d d c b~ b4 f8 d'~ | % it's okay, you're welcome
   d b4. r4 r8 f | % I'm 
   a a a a a a \tuplet 3/2 {g b d~} | % just an ordinary demi-guy!
@@ -66,18 +66,19 @@ firstChorusWords = \lyricmode {
 }
 
 secondVerseMelody = \relative c' {
-  b8\mf d b d~ |
-  d4 b8 d~ d d b e~ |
-  e4 r8 b e e e e |
-  f4 e \xNote {b8 b4.} |
-  r4 d8 d d d4 d~ |
-  d4 d8 d~ d f4 f8~ |
-  f e e d c4 r8 \xNote {b8} |
-  \xNote {b b b b b4} r4 |
-  b2 b8, b b' g~ |
-  g4. f8~ f4 d8 f~ |
-  f4 r8 \xNote {b b b} r b, |
-  aes' aes aes g aes g4 f8 |
+  \mark \markup \box "Verse 2"
+  b8\mf d b d~ | % What has two thumbs
+  d4 b8 d~ d d b e~ | % and pulled up the sky
+  e4 r8 b e e e e | % When you were waddling
+  f4 e \xNote {b8 b4.} | % ye high? This guy!
+  r4 d8 d d d4 d~ | % When the nights got cold,
+  d4 d8 d~ d f4 f8~ | % who stole you fire
+  f e e d c4 r8 \xNote {b8} | % from down below? You're
+  \xNote {b b b b b4} r4 | %  looking at him, yo!
+  b2 b8, b b' g~ | % Oh, also I lassoed
+  g4. f8~ f4 d8 f~ | % lassoed the sun
+  f4 r8 \xNote {b b b} r b, | % (you're welcome) to
+  aes' aes aes g aes g4 f8 | % 
   r2 b8, b b' g~ |
   g4. f8~ f4 d8 f~ |
   f4 r8 \xNote {b b b} r b, |
@@ -96,10 +97,19 @@ secondVerseWords = \lyricmode {
   To fill your sails and shake your trees. __
 }
 
+secondChorusMelody = \relative c'' {
+  \mark \markup \box "Chorus 2"
+}
+
+secondChorusWords = \lyricmode {
+
+}
+
 \score {
   <<
     \new Voice = "one" {
       \dynamicUp
+      r1 |
       % \firstVerseMelody
       \firstChorusMelody
     }
