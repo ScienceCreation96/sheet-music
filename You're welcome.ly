@@ -65,6 +65,37 @@ firstChorusWords = \lyricmode {
 
 }
 
+secondVerseMelody = \relative c' {
+  b8\mf d b d~ |
+  d4 b8 d~ d d b e~ |
+  e4 r8 b e e e e |
+  f4 e \xNote {b8 b4.} |
+  r4 d8 d d d4 d~ |
+  d4 d8 d~ d f4 f8~ |
+  f e e d c4 r8 \xNote {b8} |
+  \xNote {b b b b b4} r4 |
+  b2 b8, b b' g~ |
+  g4. f8~ f4 d8 f~ |
+  f4 r8 \xNote {b b b} r b, |
+  aes' aes aes g aes g4 f8 |
+  r2 b8, b b' g~ |
+  g4. f8~ f4 d8 f~ |
+  f4 r8 \xNote {b b b} r b, |
+  aes' aes aes g aes g4 f8~ |
+  f4 r8
+}
+
+secondVerseWords = \lyricmode {
+  What has two thumbs __ and pulled __ up the sky __
+  When you were wadd -- ling ye high? This guy!
+  When the nights got cold, __ who stole __ you fire __ from down be -- low?
+  You're look -- ing at him, yo!
+  Oh, al -- so I las -- soed __ the sun __ (You're wel -- come...)
+  To stretch your days and bring you fun.
+  Al -- so, I har -- nessed __ the breeze, __ (You're wel -- come! )
+  To fill your sails and shake your trees. __
+}
+
 \score {
   <<
     \new Voice = "one" {
