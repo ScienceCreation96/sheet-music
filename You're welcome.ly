@@ -117,15 +117,15 @@ secondChorusWords = \lyricmode {
   I guess it's just my way of be -- ing me! __
 }
 
-firstBridgeMelody = \relative c''' {
+BridgeMelody = \relative c''' {
   r4 r 
-  \mark \markup \box "Bridge 1"
+  \mark \markup \box "Bridge"
   g8 f~ | % You're welcome, 
   f d4. r4 f,8 d'~ | % you're welcome
   d bes4. r2 |
 }
 
-firstBridgeWords = \lyricmode {
+BridgeWords = \lyricmode {
   You're wel -- come! You're wel -- come. __
 }
 
@@ -180,12 +180,54 @@ thirdVerseWords = \lyricmode {
   Hey, hey, hey, hey, hey, hey, hey! __
 }
 
+thirdChorusMelody = \relative c'' {
+  r4 
+  \mark \markup \box "Chorus 3"
+  g8\f bes g d'~ | % Well anyway, 
+  d8 d c bes~ bes4 f8 d'~ | % let me say you're welcome
+  d bes4. r8 f8 bes a~ | % For the 
+  a a a bes~ bes a4 g8~ | % wonderful world you know
+  g4 r g8 bes g d'~ | % Hey, it's okay, 
+  d8 d c bes~ bes4 f8 d'~ | % it's okay you're welcome
+  d bes4. r4 r8 f8 | % Well, 
+  a a a a a a \tuplet 3/2 {f bes d~} | % come to think of it, I gotta go
+  d4 r4 g,8 bes g d'~ | % Hey, it's your day 
+  d4 c8 bes~ bes4 f8 d'~ | % to say "you're welcome"
+  d bes4. r4 r8 f8 | % 'Cause 
+  a a a bes~ bes a4 g8~ | % I'm gonna need that boat
+  g4 r8 f g bes g d'~ | % I'm sailing away, 
+  d4  c8 bes~ bes4 f8 d'~ | % away, you're welcome
+  d bes4. r4 r8 f | % 'Cause 
+  a a a a \tuplet 3/2 {a bes g} bes d~ | % Maui can do everything but float
+  d4 \bar ""
+}
+
+thirdChorusWords = \lyricmode {
+  Well an -- y -- way, __ let me say, __ "\"You're" wel -- "come\""
+  For the won -- der -- ful world __ you know. __
+  Hey, it's o __ kay, __ it's o -- kay __ you're wel -- come.
+  Well, come to think of it, I got -- ta go. __
+  Hey, it's your day __ to say, __ "\"You're" wel -- "come\""
+  'Cause I'm gon -- na need __ that boat. __
+  I'm sail -- ing a -- way, __ a -- way. __ You're wel -- come,
+  'Cause Mau -- i can do ev -- 'ry -- thing but float! __
+}
+
+finalMelody = \relative c'' {
+  \mark \markup \box "Final"
+  r4 r8 \xNote {bes bes bes} r4 |
+  r1
+}
+
+finalWords = \lyricmode {
+  And thank you!
+}
+
 \score {
   <<
     \new Voice = "one" {
       \dynamicUp
       \global
-      %{
       r1 |
       \firstVerseMelody
       \break
@@ -193,23 +235,27 @@ thirdVerseWords = \lyricmode {
       \break
       \secondVerseMelody
       \break
+      \pageTurn
       \secondChorusMelody
       \break
-      \firstBridgeMelody
+      \BridgeMelody
       \break
-      %}
       \thirdVerseMelody
-      
+      \thirdChorusMelody
+      \break
+      \BridgeMelody
+      \finalMelody
     }
     \new Lyrics \lyricsto "one" {
-      %{
       \firstVerseLyrics
       \firstChorusWords
       \secondVerseWords
       \secondChorusWords
-      \firstBridgeWords
-      %}
+      \BridgeWords
       \thirdVerseWords
+      \thirdChorusWords
+      \BridgeWords
+      \finalWords
     }
   >>
   \layout {
