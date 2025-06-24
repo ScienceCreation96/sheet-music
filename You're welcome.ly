@@ -1,8 +1,12 @@
 \version "2.22.1"
 
 \header {
-  title = "You're welcome"
-  composer = "_"
+  dedication = "From Moana"
+  title = "You're welcome" 
+  composer = "Music and Lyrics by"
+  arranger = "LIN-MANUEL MIRANDA"
+  poet = "Arranged by MARK BRYMER"
+  meter = "Corrected by SVETLANA MUSOYAN & IGOR MATVEEV"
 }
 
 global = {
@@ -98,7 +102,7 @@ secondVerseWords = \lyricmode {
 
 secondChorusMelody = \relative c' {
   r8
-  \mark \markup \box "Chorus 2"
+  \mark \markup \box "Chorus 2" 
   f8\f g bes g d'~ | % So what can I say
   d4 c8 bes r4 f8 d'~ | % except "you're welcome"?
   d8 bes4. r8 f bes a~ | % For the islands 
@@ -159,7 +163,7 @@ thirdVerseMelody = \relative c'' {
     \tuplet 3/2 {bes8 bes bes} \tuplet 3/2 {bes8 bes bes} | % Maui just tippity
     \tuplet 3/2 {bes8 bes r} bes4 bes bes | % tapping he he he
     bes bes bes bes~ | % he he he hey!
-    bes
+    bes \bar ""
   }
 }
 
@@ -182,7 +186,7 @@ thirdVerseWords = \lyricmode {
 
 thirdChorusMelody = \relative c'' {
   r4 
-  \mark \markup \box "Chorus 3"
+  \mark \markup \box "Chorus 3" 
   g8\f bes g d'~ | % Well anyway, 
   d8 d c bes~ bes4 f8 d'~ | % let me say you're welcome
   d bes4. r8 f8 bes a~ | % For the 
@@ -235,12 +239,14 @@ finalWords = \lyricmode {
       \break
       \secondVerseMelody
       \break
-      \pageTurn
+      \pageBreak
       \secondChorusMelody
       \break
       \BridgeMelody
       \break
       \thirdVerseMelody
+      \break
+      \pageBreak
       \thirdChorusMelody
       \break
       \BridgeMelody
@@ -260,6 +266,7 @@ finalWords = \lyricmode {
   >>
   \layout {
     indent = #0
+    page-count = #4
   }
-  \midi { }
+  % \midi { }
 }
